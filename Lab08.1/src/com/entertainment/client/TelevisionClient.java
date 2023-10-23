@@ -18,6 +18,7 @@ class TelevisionClient {
         System.out.println(tv);
         
         // TODO: change the channel
+        tv.changeChannel("The weather channel");
         
         System.out.println(tv);
     }
