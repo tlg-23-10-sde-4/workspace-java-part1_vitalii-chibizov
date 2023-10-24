@@ -6,32 +6,32 @@ public class SalariedEmployee extends Employee {
 
     public SalariedEmployee() {
     }
-
     private double salary;
 
     // ctor
     public SalariedEmployee(String name, LocalDate hireDate) {
         super(name, hireDate);
     }
-
     public SalariedEmployee(String name, LocalDate hireDate, double salary) {
         this(name, hireDate);
         setSalary(salary);
     }
 
-    // get / set
+    // business methods
+    @Override
+    public void pay(){
+        System.out.printf("%s is getting paid: %s\n", getName(), getSalary());
+    }
 
+    // get / set
     public double getSalary() {
         return salary;
     }
-
     public void setSalary(double salary) {
         this.salary = salary;
     }
-
+    @Override
     public String toString() {
-        return String.format("Employee's name is: %s, his hire date is: %s,\n" +
-                        "his salary is - %s\n",
-                getName(), getHireDate(), getSalary());
+        return super.toString() + String.format("his salary is - %s", getSalary());
     }
 }

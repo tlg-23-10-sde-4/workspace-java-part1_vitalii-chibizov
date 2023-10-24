@@ -29,7 +29,6 @@ public class Employee {
     // constructors
     public Employee() {
     }
-
     public Employee(String name, LocalDate hireDate) {
         setName(name);
         setHireDate(hireDate);
@@ -39,26 +38,26 @@ public class Employee {
     public void work() {
         System.out.println(getName() + " working hard since " + getHireDate());
     }
+    public void pay(){
+        System.out.println(getName() + " is getting paid somehow...");
+    }
 
     // accessor methods
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public LocalDate getHireDate() {
         return hireDate;
     }
-
     public void setHireDate(LocalDate hireDate) {
         this.hireDate = hireDate;
     }
-
     @Override
     public String toString() {
-        return "Employee: name=" + getName() + ", hireDate=" + getHireDate();
+        return String.format("Employee's name is: %s, his hire date is: %s",
+                getName(), getHireDate());
     }
 }

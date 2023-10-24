@@ -32,7 +32,6 @@ public class Department {
     // constructors
     public Department() {
     }
-
     public Department(String name, String location) {
         setName(name);
         setLocation(location);
@@ -46,10 +45,14 @@ public class Department {
             System.out.println(employees[i]);  // toString() automatically called
         }
     }
-
     public void workEmployees() {
         for (int i = 0; i < currentIndex; i++) {
             employees[i].work();
+        }
+    }
+    public void payEmployees(){
+        for (int i = 0; i < currentIndex; i++) {
+            employees[i].pay();
         }
     }
 
@@ -62,19 +65,15 @@ public class Department {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getLocation() {
         return location;
     }
-
     public void setLocation(String location) {
         this.location = location;
     }
-
     public String toString() {
         return "Department: name=" + getName() + ", location=" + getLocation();
     }
