@@ -15,20 +15,25 @@ import gov.irs.TaxPayer;
  */
 public class Corporation implements TaxPayer {
     private String name;
+    public static final double STANDARD_DEDUCTION = 1_000_000.0;
 
     public Corporation(String name) {
         setName(name);
     }
 
-    @Override  // interface TaxPayer
+    @Override  // interface TaxPayer (this one is required)
     public void payTaxes() {
         //System.out.println(getName() + " paid no taxes - we lobbied hard and it worked");
         System.out.printf("\n%s paid no taxes - we lobbied hard and it worked", getName());
     }
 
-    @Override   // interface TaxPayer
+    @Override   // interface TaxPayer (opt-in)
     public void fileReturn() {
-        System.out.printf("Return not filed - we sent our lawyers instead\n");
+        System.out.printf("Return not filed - we sent our lawyers instead");
+    }
+    @Override   // interface TaxPayer (opt-in)
+    public double getStandardDeduction(){
+        return STANDARD_DEDUCTION;
     }
 
     public String getName() {

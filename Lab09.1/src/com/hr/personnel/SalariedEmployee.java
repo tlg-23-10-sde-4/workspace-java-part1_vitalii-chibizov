@@ -1,13 +1,13 @@
 package com.hr.personnel;
-
 import java.time.LocalDate;
 
 public class SalariedEmployee
         extends Employee {
-
+    private static final double STANDARD_DEDUCTION = 10000.0;
     public SalariedEmployee() {
     }
     private double salary;
+
 
     // ctor
     public SalariedEmployee(String name, LocalDate hireDate) {
@@ -21,7 +21,11 @@ public class SalariedEmployee
     // abstract methods
     @Override
     public void payTaxes() {
-        System.out.printf("\n%s paid taxes of %s", getName(), SALARIED_TAX_RATE*getSalary());
+        System.out.printf("%s paid taxes of %s", getName(), SALARIED_TAX_RATE*getSalary());
+    }
+    @Override   // interface TaxPayer (opt-in)
+    public double getStandardDeduction(){
+        return STANDARD_DEDUCTION;
     }
 
     // business methods

@@ -22,7 +22,7 @@ public class HourlyEmployee
     // abstract methods
     @Override
     public void payTaxes() {
-        System.out.printf("\n%s paid taxes of %s", getName(), HOURLY_TAX_RATE*getRate()*getHours());
+        System.out.printf("%s paid taxes of %s", getName(), HOURLY_TAX_RATE*getRate()*getHours());
     }
 
     // business methods

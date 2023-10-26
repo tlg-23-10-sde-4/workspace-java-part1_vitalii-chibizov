@@ -15,7 +15,7 @@ package gov.irs;
  */
 public class IRS {
     // what types of objects can this array contain?
-    private TaxPayer[] payers = new TaxPayer[100];
+    private final TaxPayer[] payers = new TaxPayer[100];
     private int currentIndex = 0;  // for dealing with the array
 
     public void collectTaxes() {
@@ -24,7 +24,7 @@ public class IRS {
             System.out.printf("Taxpayer's deduction is: %s\n", deduction);
             payers[i].fileReturn();
             payers[i].payTaxes();
-            System.out.println();
+            System.out.println("\n------------------------------\n");
         }
     }
     

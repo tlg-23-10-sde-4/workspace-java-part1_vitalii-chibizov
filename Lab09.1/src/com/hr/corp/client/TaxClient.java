@@ -9,8 +9,8 @@
 package com.hr.corp.client;
 
 import com.hr.corp.Corporation;
-import com.hr.personnel.Employee;
-import com.hr.personnel.Department;
+//import com.hr.personnel.Employee;
+//import com.hr.personnel.Department;
 import com.hr.personnel.Executive;
 import com.hr.personnel.HourlyEmployee;
 import com.hr.personnel.SalariedEmployee;
@@ -37,7 +37,7 @@ class TaxClient {
         irs.register(new Executive("Vladislav", LocalDate.of(2013,1,1), 7000.0));
 
         // IRS collects taxes
-        System.out.println("IRS collects taxes:");
+        System.out.println("\nIRS collects taxes:\n");
         irs.collectTaxes();
     }
 }
