@@ -15,7 +15,7 @@ public class EmployeeClient {
             emp.goToWork();
         } catch (WorkException e) {
             System.out.println(e.getMessage()); // just the reason string
-            System.out.println(e.getCause());   // extract nested cause
+            System.out.println(e.getCause().getMessage());   // extract nested cause
             e.printStackTrace();
         }
 
