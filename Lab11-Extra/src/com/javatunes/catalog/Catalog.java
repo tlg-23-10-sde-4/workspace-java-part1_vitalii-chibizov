@@ -8,7 +8,6 @@
 
 package com.javatunes.catalog;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 public interface Catalog {
@@ -30,6 +29,7 @@ public interface Catalog {
 
 
     public Collection<MusicItem> findByKeyword(String keyword);
+    public Double averagePrice(MusicCategory category);
 
 
     /**

@@ -101,6 +101,7 @@ public class InMemoryCatalog implements Catalog {
      */
 
 
+
     /**
      * TASK: how many items of the specified genre (MusicCategory) do we sell?
      */
@@ -118,7 +119,26 @@ public class InMemoryCatalog implements Catalog {
 
     /**
      * TASK: find the average price of items in the specified genre (MusicCategory).
+     * @return
      */
+
+
+    @Override
+    public Double averagePrice(MusicCategory category) {
+        //Collection<MusicItem> item = new ArrayList<>();
+        double result = 0.0;
+        double itemsInCategory = 0.0;
+        double resultAverage = 0.0;
+        for (MusicItem item : catalogData) {
+            if (item.getMusicCategory().equals(category)) {
+                result += item.getPrice();
+                itemsInCategory++;
+            }
+        }
+        resultAverage = result / itemsInCategory;
+        return resultAverage;
+    }
+
 
 
     /**
@@ -141,6 +161,16 @@ public class InMemoryCatalog implements Catalog {
 
     /**
      * TASK: find all items released in the 80s whose price is less than or equal to the specified price.
+         @Override
+    public Collection<MusicItem> releaseDatePlusPrice(String keyword) {
+        Collection<MusicItem> result = new ArrayList<>();
+        for (MusicItem item : catalogData) {
+            if (item.getTitle().contains(keyword) || item.getArtist().contains(keyword)) {
+                result.add(item);
+            }
+        }
+        return result;
+    }
      */
 
 
